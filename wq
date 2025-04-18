@@ -1,0 +1,23 @@
+[33mcommit 429934d61e5d048b977a640902787e34e895def4[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Mberwa Ath <mberwa1993@gmail.com>
+Date:   Wed Apr 16 21:17:50 2025 -0400
+
+    inventory updated
+
+[33mcommit 650fd55fe453cac53a3004044fdd01ab93191e6f[m
+Author: Mberwa Ath <mberwa1993@gmail.com>
+Date:   Wed Apr 16 20:53:54 2025 -0400
+
+    first version of the inventory file, added three host
+
+[33mcommit 85c2b9bbcb659364f2d986ae7ece33e5c9f35451[m
+Author: Mberwa Ath <mberwa1993@gmail.com>
+Date:   Wed Apr 16 06:39:23 2025 -0400
+
+    first commit
+
+[33mcommit 979fc7e37e1b4950421a6f846b77c2e0967d66eb[m
+Author: Mberwa <90235393+Mberwa@users.noreply.github.com>
+Date:   Wed Apr 16 06:23:24 2025 -0400
+
+    Initial commit
