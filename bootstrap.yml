@@ -6,11 +6,11 @@
 
 
 
-  - name: update repo updates
+  - name: install updates
     tags: always
     dnf:
+     update_only: yes
      update_cache: yes
-    changed_when: false
     when: ansible_distribution == "CentOS"
 
 
@@ -35,13 +35,30 @@
       enabled: yes
     when: ansible_distribution == "CentOS"  
     
+- hosts: all
+  become: true
+  tasks:
+  - name: create simone user
+    tags: always
+    user:
+      name: simone
+      group: root
 
   - name: add ssh key for simone
     tags: always
     ansible.builtin.authorized_key:
       user: simone
       key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFguLfPBEGhPdEwRA4b+ax8IiCQXQjMWUzc5L5IluHXB ansible"
-  
+
+
+  - name: add sudoers file for simone
+    tags: always
+    ansible.builtin.copy:
+      src: sudoer_simone
+      dest: /etc/sudoers.d/simone
+      owner: root
+      group: root
+      mode: 0440    
 
   - name: copy default html file for site
     tags: apache,httpd
@@ -65,16 +82,6 @@
 
 
 
-- hosts: db_servers
-  become: true
-  tasks:
 
-  - name: install mariadb package (CentOS)
-    tags: centos,db,mariadb
-    ansible.builtin.yum:
-      name: 
-       - mariadb
-      state: present
-    when: ansible_distribution == "CentOS"
       
 
