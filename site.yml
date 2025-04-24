@@ -27,6 +27,15 @@
       state: present
     when: ansible_distribution == "CentOS"
 
+  - name: start httpd centos
+    tags: apache,centos,httpd
+    ansible.builtin.service:
+      name: httpd
+      state: started
+      enabled: yes
+    when: ansible_distribution == "CentOS"  
+    
+
   - name: copy default html file for site
     tags: apache,httpd
     copy:
@@ -35,7 +44,15 @@
       owner: root
       group: root
       mode: 0644
-      
+
+- hosts: workstations
+  become: true
+  tasks:
+  - name: install unzip
+    ansible.builtin.package:
+      name: unzip
+
+
 
 
 

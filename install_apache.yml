@@ -4,11 +4,11 @@
   tasks:
 
   - name: update repository index
-    yum:
+    ansible.builtin.yum:
       update_cache: yes
 
   - name: install_apache and php package
-    yum:
+    ansible.builtin.yum:
       name: 
       - httpd
       - php
