@@ -7,7 +7,10 @@
     yum:
       update_cache: yes
 
-  - name: install_apache package
+  - name: install_apache and php package
     yum:
-      name: httpd
+      name: 
+      - httpd
+      - php
       state: present
+    when: ansible_distribution == "CentOS"

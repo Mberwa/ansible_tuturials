@@ -1,4 +1,9 @@
+[web_servers]
 mberwa@192.168.1.184
-node1@192.168.1.185
 node2@server2
+
+[file_servers]
+node1@192.168.1.185
+
+[db_servers]
 node3@192.168.1.187
