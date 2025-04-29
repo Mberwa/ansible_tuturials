@@ -38,9 +38,11 @@
 
   - name: add ssh key for simone
     tags: always
+    ansible.builtin.cs_role:
+      ssh_roles
     ansible.builtin.authorized_key:
       user: simone
-      key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFguLfPBEGhPdEwRA4b+ax8IiCQXQjMWUzc5L5IluHXB ansible"
+      key: "{{ keys }}"
   
 
   - name: copy default html file for site
